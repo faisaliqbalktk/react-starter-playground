@@ -1,68 +1,172 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "helvetica neue";
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.container{
+  width: 96%;
+  margin: auto;
+}
+
+.nav{
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+  background: linear-gradient(135deg, #3498db, #8e44ad);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.logo{
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links{
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-links li a:hover{
+  background-color: rgba(255,255,255,0.2);
+  transform: scale(1.1);
+}
+
+/* Responsive */
+@media(max-width: 768px){
+  .nav{
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .nav-links{
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+
+/* cards */
+/* Container for all cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+  padding: 40px 20px;
+  background-color: #f5f7fa;
   min-height: 100vh;
 }
 
+/* Individual Card */
+.card {
+  width: 280px;
+  background-color: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  padding: 25px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Avatar Circle */
+.avatar {
+  width: 90px;
+  height: 90px;
+  background-color: #3498db;
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Name, Age, Profession */
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 8px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+h2 {
+  font-size: 18px;
+  color: #34495e;
+  margin-bottom: 6px;
+}
+
+h3 {
+  font-size: 16px;
+  color: #7f8c8d;
+  margin-bottom: 12px;
+}
+
+/* Description Paragraph */
+p {
+  font-size: 14px;
+  color: #606c76;
+  margin-bottom: 18px;
+  line-height: 1.5;
+}
+
+/* Connect Button */
+.card-btn {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.card-btn:hover {
+  background: linear-gradient(135deg, #2980b9, #1c5980);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  .card {
+    width: 90%;
   }
 }
